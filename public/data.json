@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "treatment": "Teeth Cleaning",
+    "image": "https://dentallabs.org/media/2022/10/pexels-anna-shvets-3845653-scaled-2560x1280.jpg",
+    "description": "Professional cleaning to remove plaque, tartar, and stains for a healthier smile.",
+    "cost": 50
+  },
+  {
+    "id": 2,
+    "treatment": "Dental Fillings",
+    "image": "https://www.uab.edu/news/images/migration/articles/intro-images/three-things-your-dentist-wants-you-to-know.jpg",
+    "description": "Restoration of decayed or damaged teeth using tooth-colored filling materials.",
+    "cost": 80
+  },
+  {
+    "id": 3,
+    "treatment": "Tooth Extraction",
+    "image": "https://gallodental.com/wp-content/uploads/cosmetic-dentist-2112.jpg",
+    "description": "Safe removal of severely damaged or decayed teeth.",
+    "cost": 70
+  },
+  {
+    "id": 4,
+    "treatment": "Root Canal Therapy",
+    "image": "https://deshbhagatuniversity.in/wp-content/uploads/2024/07/2149206225.jpg",
+    "description": "Treatment to save infected or badly decayed teeth by removing the pulp and sealing the tooth.",
+    "cost": 150
+  },
+  {
+    "id": 5,
+    "treatment": "Dental Implants",
+    "image": "https://elements-resized.envatousercontent.com/elements-video-cover-images/files/204363283/preview.jpg?w=500&cf_fit=cover&q=85&format=auto&s=0402a2972639e79042333246978ca08b723eee92cbb64b988853e7067dddffc6",
+    "description": "Permanent replacement of missing teeth with artificial ones that look and function like real teeth.",
+    "cost": 800
+  },
+  {
+    "id": 6,
+    "treatment": "Teeth Whitening",
+    "image": "https://dentishealthcare.com/wp-content/uploads/2024/09/Pick-the-dentist-that-fits-all-your-needs-the-best.webp",
+    "description": "Cosmetic procedure to lighten stained or discolored teeth and enhance your smile.",
+    "cost": 100
+  }
+]

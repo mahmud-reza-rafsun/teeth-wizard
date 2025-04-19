@@ -1,0 +1,38 @@
+[
+  {
+    "reviewId": 1,
+    "name": "Emily Johnson",
+    "userImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpuUwExMndJ0IioFnec42P_uyo-kr6LJ3LAA&s",
+    "review": "Dr. Smith and his team were amazing! Very gentle and professional. Highly recommended!"
+  },
+  {
+    "reviewId": 2,
+    "name": "Michael Lee",
+    "userImg": "https://upload.wikimedia.org/wikipedia/commons/4/4e/MLEE_Headshot_Outside.jpg",
+    "review": "Best dental experience I’ve ever had. The clinic is clean and modern. Staff is friendly."
+  },
+  {
+    "reviewId": 3,
+    "name": "Sophia Martinez",
+    "userImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSeJrx91D19IKZg1GawnaCbhH_vWQ5uhbRkg&s",
+    "review": "I was nervous at first, but they made me feel completely comfortable. Excellent service!"
+  },
+  {
+    "reviewId": 4,
+    "name": "James Anderson",
+    "userImg": "https://i.cdn.newsbytesapp.com/images/l66320240916130808.jpeg",
+    "review": "Quick, painless, and professional. I’m actually looking forward to my next appointment."
+  },
+  {
+    "reviewId": 5,
+    "name": "Olivia Brown",
+    "userImg": "https://oldvic.ac.uk/wp-content/uploads/2021/05/Olivia-Brown-1.jpg",
+    "review": "Highly skilled dentist with a great team. They explained everything clearly and were very patient."
+  },
+  {
+    "reviewId": 6,
+    "name": "Daniel Wilson",
+    "userImg": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2Bo_SCldWKJX5HiP9JLKmL-FDt5XXg4CQmg&s",
+    "review": "A truly wonderful experience from start to finish. Wouldn’t go anywhere else for dental care."
+  }
+]
