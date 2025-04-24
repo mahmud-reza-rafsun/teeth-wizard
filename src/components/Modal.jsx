@@ -1,4 +1,8 @@
+import { useContext } from "react";
+import { AuthContext } from "../AuthProvider/AuthProvider";
+
 const Modal = () => {
+    const { user } = useContext(AuthContext);
     const handleSubmit = (e) => {
         e.preventDefault();
         const firstName = e.target.Fname.value;
@@ -8,7 +12,21 @@ const Modal = () => {
         const appoinmentDate = e.target.appoinment.value;
         const address = e.target.address.value;
         const password = e.target.password.value;
-        console.log(firstName, lastName, email, phone, appoinmentDate, address, password);
+        const info = {
+            firstName,
+            lastName,
+            phone,
+            appoinmentDate,
+            address,
+            password,
+        }
+        let saveData = [];
+        const localData = localStorage.getItem('appoinment')
+        if (localData) {
+            saveData = JSON.parse(localData)
+        }
+        saveData.push(info)
+        localStorage.setItem('appoinment', JSON.stringify(saveData));
     }
     return (
         <dialog id="my_modal_5" className="modal modal-bottom sm:modal-middle">
@@ -33,7 +51,7 @@ const Modal = () => {
                                     <label className="label">
                                         <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" name="email" placeholder="Email" className="input input-bordered" required />
+                                    <input type="email" value={user?.email} name="email" placeholder="Email" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control">
                                     <label className="label">
@@ -52,12 +70,6 @@ const Modal = () => {
                                         <span className="label-text">Address</span>
                                     </label>
                                     <input type="text" name="address" placeholder="Address" className="input input-bordered" required />
-                                </div>
-                                <div className="form-control">
-                                    <label className="label">
-                                        <span className="label-text">Password</span>
-                                    </label>
-                                    <input type="password" name="password" placeholder="Password" className="input input-bordered" required />
                                 </div>
                                 <div className="form-control mt-3">
                                     <button className="btn bg-indigo-500 hover:bg-indigo-600 text-white">Make Appoinment</button>

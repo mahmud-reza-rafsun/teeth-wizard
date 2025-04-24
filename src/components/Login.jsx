@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
@@ -7,6 +7,9 @@ const Login = () => {
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
     const [showPassword, setShowPassword] = useState(null);
     const [error, setError] = useState('');
+    const location = useLocation();
+    const navigate = useNavigate();
+    console.log(location);
     const handleLogin = (e) => {
         e.preventDefault();
         const email = e.target.email.value;
@@ -17,10 +20,16 @@ const Login = () => {
         signInUser(email, password)
             .then((res) => {
                 console.log(res.user);
-                target.reset();
+                navigate(location?.state?.from)
             })
             .catch((error) => {
                 setError(error.message);
+            })
+    }
+    const handleGoogleLogin = () => {
+        signInWithGoogle()
+            .then(res => {
+                navigate(location?.state?.from)
             })
     }
     return (
@@ -54,7 +63,7 @@ const Login = () => {
                             <button className="btn bg-indigo-500 text-white hover:bg-indigo-600">Login</button>
                         </div>
                     </form>
-                    <button onClick={signInWithGoogle} className="btn btn-accent w-fit text-white ml-4 mb-3">google login</button>
+                    <button onClick={handleGoogleLogin} className="btn btn-accent w-fit text-white ml-4 mb-3">google login</button>
                     {error && (
                         <p className="text-red-500 text-sm pl-3">
                             {error.match(/\(auth\/(.*)\)/)?.[1]?.replaceAll('-', ' ')}

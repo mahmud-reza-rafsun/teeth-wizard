@@ -47,7 +47,6 @@ const router = createBrowserRouter([
                     const res = await fetch('/data.json');
                     const data = await res.json();
                     const singleData = data.find((d) => d?.id == params?.id);
-                    console.log(singleData);
                     return singleData;
                 }
             },

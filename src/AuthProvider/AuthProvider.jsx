@@ -14,6 +14,7 @@ export const AuthContext = createContext();
 const googleProvider = new GoogleAuthProvider();
 const AuthProvider = ({ router }) => {
     const [user, setUser] = useState(null);
+    const [loading, setLoading] = useState(true);
     const createUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password);
     }
@@ -40,6 +41,7 @@ const AuthProvider = ({ router }) => {
             else {
                 setUser(null);
             }
+            setLoading(false);
         })
         return () => {
             unSubscribe();
@@ -51,7 +53,9 @@ const AuthProvider = ({ router }) => {
         signOutUser,
         signInWithGoogle,
         manageProfile,
-        user
+        user,
+        setUser,
+        loading
     }
     return (
         <div>
