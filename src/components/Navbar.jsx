@@ -1,6 +1,12 @@
+import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../AuthProvider/AuthProvider";
 
 const Navbar = () => {
+    const { user, signOutUser } = useContext(AuthContext);
+    const handleSignOut = () => {
+        signOutUser();
+    }
     return (
         <div className="navbar bg-indigo-500 sticky top-0 z-50 min-h-16 px-6 lg:px-16">
             <div className="navbar-start">
@@ -12,12 +18,22 @@ const Navbar = () => {
                     <li><NavLink to="/" className="">Home</NavLink></li>
                     <li><NavLink to="allTreatment">All Treatment</NavLink></li>
                     <li><NavLink to="myAppoinment">My Appoinments</NavLink></li>
-                    <li><NavLink to="login">Login</NavLink></li>
+                    <li><NavLink to="/profile">Profile</NavLink></li>
                 </ul>
             </div>
             <div className="navbar-end">
                 <div className="lg:block hidden">
-                    <Link className="btn text-center bg-[#9b9cf0] hover:bg-[#9b9cf0] hover:border-[#9b9cf0] border-[#9b9cf0] text-white">Login</Link>
+                    {
+                        user
+                            ?
+                            <div className="flex items-center gap-3">
+                                <p className="text-white">{user?.image}</p>
+                                <button onClick={handleSignOut} className="btn text-center bg-[#9b9cf0] hover:bg-[#9b9cf0] hover:border-[#9b9cf0] border-[#9b9cf0] text-white">Logout</button>
+                            </div>
+
+                            :
+                            <Link to="/login" className="btn text-center bg-[#9b9cf0] hover:bg-[#9b9cf0] hover:border-[#9b9cf0] border-[#9b9cf0] text-white">Login</Link>
+                    }
                 </div>
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn text-white btn-ghost lg:hidden">

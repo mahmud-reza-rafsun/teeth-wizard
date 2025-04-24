@@ -5,7 +5,6 @@ import Feed from "../components/Feed";
 
 const Home = () => {
     const services = useLoaderData();
-    console.log(services);
     const { servicesData, reviewData } = services;
     return (
         <div className="lg:px-16 px-6">

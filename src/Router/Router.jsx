@@ -5,6 +5,8 @@ import AllTreatment from "../components/AllTreatment";
 import MyAppoinment from "../components/MyAppoinment";
 import Login from "../components/Login";
 import Details from "../components/Details";
+import Register from "../components/Register";
+import PrivetRoute from "../components/PrivetRoute";
 
 const router = createBrowserRouter([
     {
@@ -38,7 +40,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/details/:id',
-                element: <Details />,
+                element: <PrivetRoute>
+                    <Details />
+                </PrivetRoute>,
                 loader: async ({ params }) => {
                     const res = await fetch('/data.json');
                     const data = await res.json();
@@ -46,6 +50,14 @@ const router = createBrowserRouter([
                     console.log(singleData);
                     return singleData;
                 }
+            },
+            {
+                path: '/login',
+                element: <Login />
+            },
+            {
+                path: '/register',
+                element: <Register />
             }
         ]
     }
